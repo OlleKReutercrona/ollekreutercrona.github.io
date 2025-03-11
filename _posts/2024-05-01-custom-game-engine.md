@@ -9,7 +9,7 @@ permalink: /custom_game_engine
 During my second year at The Game Assembly, my team and I developed a custom game engine named **Kitty Engine** for a total of 4 group projects. This page goes more in depth on some of my contributions on the engine.
 Full project can be found here: [Kitty Engine source code](https://github.com/OlleKReutercrona/KittyEngine/tree/main/KittyEngine)
 
-<img title="" src="../_assets/img/KittyEngineLogo.png" alt="" data-align="center" width="317">
+<img title="" src="/_assets/img/KittyEngineLogo.png" alt="" data-align="center" width="317">
 
 > **[Disclaimer]** The source code was moved from a private perforce server to github so all previous commit history has thus been deleted. On the other hand there is a game project in the repo. The game can be played here: [Intergalactic Ball Throwing Championship With Friends ツ](https://kapten-h.itch.io/igbtcwf)
 
@@ -112,7 +112,7 @@ During the second project with the engine we wanted to go from a forward rendere
 
 In our deferred renderer we chose to extract the following data from our rendered models: World Position, Albedo, Texture Normal, Material, Ambient Occlusion and lastly Effects. Although the world position texture can be seen as redundant as we could just as easily calculate the world position in the shader, we agreed that it has its benefits to keep the texture. These textures are saved in an object called GBuffer that acts as a texture container for the Deferred Renderer. When all models have been rendered we are left with several textures that contain their relevant data, now its just up to something to put them all together. 
 
-<img title="" src="../_assets/img/Deferred%20Final%20Image.png" alt="">
+<img title="" src="/_assets/img/Deferred%20Final%20Image.png" alt="">
 
 #### Putting it together
 
@@ -120,6 +120,6 @@ So how do we put the textures together and create the final image? Some sources 
 
 Even though it would work, it wouldn’t be efficient to apply point or spotlights with a fullscreen shader since they more often then not don’t cover the whole screen. The solution we went with was to generate a low poly sphere that covers the size of the light. For every light we just move the sphere to where that light is in world space and renders it as a normal 3D-mesh with its own pixel shader.  The sphere works like a mask would in a program like Photoshop, essentially it only manipulates the pixels that the sphere covers and nothing else. When rendered the result is then applied to the image given by the directional lights fullscreen shader.
 
-<img title="" src="../_assets/img/Pointlight%20Sphere.png" alt="">
+<img title="" src="/_assets/img/Pointlight%20Sphere.png" alt="">
 
 It is also with smaller light sources we can see one of the absolute biggest performance increases compared to forward rendering. I previously mentioned expensive shader code, well, when rendering an object with forward rendering each object must figure out how it should be lit from a light source in their pixel shader. So, let’s say that 8 objects have 8 nearby light sources, then each object must determine if that source applies to them resulting in 64 total light calculations. EXPENSIVE! With deferred rendering, as written above, we only do one light calculation per light source and then applies the result to the final image instead.
