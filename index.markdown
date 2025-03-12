@@ -4,9 +4,3 @@
 
 layout: home
 ---
-
-{% for file in site.static_files %}
-
-{{ file.path }} <br>
-
-{% endfor %}
