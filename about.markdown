@@ -6,8 +6,23 @@ permalink: /about/
 
 ## Hello there, I’m Olle!
 
-My interest in making games started at an early age when I started making maps for Counter Strike: Source in Valves editor Hammer. Since then, I’ve had a dream of one day having a career in game development. After a rather long career in retail I decided that I was ready to persue my dream and applied to Södertörns Högskola where I studied Game Design and Scripting.
+I'm a guy that likes to play computer games and also make them! 
 
-Although the education at Södertörn taught me a lot about game development, I wanted something with a higher tempo and found The Game Assembly. Ever since fall 2022 I’ve been a student at The Game Assembly studying Game Programming, learning about game development in C++ and what it takes to work closely with other disciplines towards a common goal. I also got the amazing opportunity to create my own custom built game engine together with my team during my second year.
+#### Background
 
-In a team I would describe myself as a happy guy that likes to increase morale and mood by cracking jokes and hyping my teammates up. I see myself as a driven, dependable teammate that has a clear understanding of what needs to be done and not afraid to step out of my comfort zone to try something new. I thrive when I work closely with colleagues that share my passion.
+My interest in game development started at a young age when I started making my own maps for games my friends and I played. In later years I decided to pursue a career in game development and began to study game programming at Södertörns Högskola followed by The Game Assembly Stockholm. In my last year at The Game Assembly I got the opportunity to be an intern at King where my main responsibilities was to maintain and develop features for King's proprietary game engine, more specifically the editor. 
+
+#### Personal interests
+
+In my free time I like to play computer games. Lately there has been a lot of World of Warcraft and Old School Runescape (no exp waste) but I also enjoy more story driven games! 
+I also like to play on my electric bass and listen to music, a lot... Some of my favorite bands are Opeth, Faith no More,  Red Hot Chili Peppers, Muse and K0rn to name a few. 
+
+
+
+<a href="u/assets/OlleKarlsonReutercronaCV.pdf" target="_blank">Resume</a>
+
+#### Contact info
+
+Email: ollekreutercrona@gmail.com
+[LinkedIn](https://www.linkedin.com/in/ollekarlsonreutercrona/)
+[Github](https://github.com/OlleKReutercrona)
