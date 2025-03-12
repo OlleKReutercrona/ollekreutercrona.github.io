@@ -17,14 +17,6 @@ Full project can be found here: [Kitty Engine source code](https://github.com/Ol
 
 When we first started building the engine, I took on the responsibility of writing the code that handles the logic side of the game. This includes handling scenes, updating objects and running game specific code in a structured way. After some researching and discussions in the team I took the decision to build a GameObject/Component system that is familiar to Unitys scripting interface. I chose to design it this way since we all had previous experience with Unity and would therefor feel familiar and intuitive. 
 
-```mermaid
-sequenceDiagram
-SceneManager ->> Scene: currentScene->Update()
-Scene->>GameObjectManager: GOManager->Update()
-GameObjectManager->>GameObject: All GameObjects->Update()
-GameObject->>Component: All Components->Update()
-```
-
 This part of the engine works as following: an object called SceneManager owns all scenes of the game and is responsible to run the current scenes update functions, changing scene and lastly loading a new scene from file.  
 
 The Scene object contains everything that an instance of a level should have, this includes a GameObject Manager, an interface to the collision system and a navmesh. 

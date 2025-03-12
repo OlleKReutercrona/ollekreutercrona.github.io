@@ -19,11 +19,11 @@ I also like to play on my electric bass and listen to music, a lot... Some of my
 
 
 
-<a href="/assets/files/OlleKarlsonReutercronaCV.pdf" target="_blank">Resume</a>
+#### <a href="/assets/files/OlleKarlsonReutercronaCV.pdf" target="_blank">Resume</a>
 
 #### Contact info
 
-Email: ollekreutercrona@gmail.com
+Email: [ollekreutercrona@gmail.com](mailto:ollekreutercrona@gmail.com)
 
 [LinkedIn](https://www.linkedin.com/in/ollekarlsonreutercrona/)
 
