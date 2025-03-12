@@ -19,7 +19,7 @@ I also like to play on my electric bass and listen to music, a lot... Some of my
 
 
 
-<a href="u/assets/OlleKarlsonReutercronaCV.pdf" target="_blank">Resume</a>
+<a href="u/assets/files/OlleKarlsonReutercronaCV.pdf" target="_blank">Resume</a>
 
 #### Contact info
 
