@@ -1,5 +1,3 @@
-# Group Projects
-
 ## Intergalactic Ball Throwing Championship With Friends ツ
 
 [Intergalactic Ball Throwing Championship With Friends ツ Trailer](https://www.youtube.com/watch?v=Kt_vxRA8lns)
