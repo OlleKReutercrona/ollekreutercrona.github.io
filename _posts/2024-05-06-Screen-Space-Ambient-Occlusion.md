@@ -19,13 +19,13 @@ The result is a rather noisy looking SSAO texture. This is caused by the random 
 for (int i = 0; i < SSAONumOfSamples; i++)
     {
         float3 samplePos = mul(SSAOSamples[i].xyz, TBN);
-        
+
         samplePos = worldPos.xyz + samplePos * rad;
 
         const float4 offset = mul(worldToClipSpaceMatrix, float4(samplePos, 1.0f));
 
         const float3 sampledProjectedPos = offset.xyz / offset.w;
-            
+
         const float2 sampleUV = 0.5f + float2(0.5f, -0.5f) * sampledProjectedPos.xy;
 
         const float sampleDepth = depthTex.Sample(SSAOSampler, sampleUV.xy).r;
@@ -33,15 +33,15 @@ for (int i = 0; i < SSAONumOfSamples; i++)
         const float3 sampledWP = worldPositionTex.Sample(SSAOSampler, sampleUV.xy).xyz;
 
         const float pixelDist = length(worldPos.xyz - sampledWP);
-        
+
         const float rangeCheck = smoothstep(0.0f, 1.0f, rad / pixelDist);
-     
+
         occlusion += (sampleDepth < sampledProjectedPos.z - bias ? 1.0f : 0.0f) * rangeCheck;
     }
     occlusion = 1.0f - (occlusion / SSAONumOfSamples);
-    
+
     output.aoTexture = float4(occlusion, occlusion, occlusion, 1);
-    
+
     return output;
 ```
 
