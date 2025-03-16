@@ -1,7 +1,6 @@
 ---
-layout: post
+layout: page
 title: "Custom Game Engine"
-date: 2024-05-01
 permalink: /custom_game_engine
 
 ---
@@ -90,7 +89,7 @@ The Component is the bottom of the pyramid. Just as in Unity these objects have 
 
 The first iteration of this system saw a pure virtual component class, but this had a major drawback. Pure virtual forces a derived class to implement ALL of the base component class’s virtual functions, which most of the time meant a bunch of empty function calls and cluttered files. My solution to this was to instead let the base class have a body defined in all function with the intrinsic `__noop` in all of them. This makes sure that the function is ignored and no code is generated if it’s not overridden by the derived class. When we ran 15000 GameObjects with and without the `__noop`  intrinsic we saw that the difference went from *1.16ms* with it active to *2.29ms* without it.
 
-#### Reflections
+### Reflections
 
 Overall I am very pleased with how well the system has held up over 4 game projects, especially with the complexity of some of the projects in mind. But of course it has its limits and is far from perfect. Working on this has taught me a lot on the importance of good memory management and how a small change can lead to a large problem. Since the system can handle >15000 GameObjects with probably even more components at the same time, it became important to be mindful about not adding unnecessary member variables to the class.
 
@@ -98,7 +97,7 @@ There are some optimizations I would like to implement, one of them being a solu
 
 ## Deferred Renderer
 
-#### What is Deferred Rendering?
+### What is Deferred Rendering?
 
 During the second project with the engine we wanted to go from a forward renderer to a deferred renderer, so together with [Anton Eriksson]([Anton-Eriksson.se](https://anton-eriksson.se/index.html)) I took on this task. Deferred rendering is a technique that dissects the data to be rendered and writes what data should be used per pixel to different textures, instead of forward rendering that renders all objects as you would create a stop motion movie with paper figures. Another huge difference from forward rendering is that instead of running expensive shader code on objects that will later be occluded by something in front, we just run the expensive shaders later when we have determined what data is to be used on that pixel.
 
@@ -106,7 +105,7 @@ In our deferred renderer we chose to extract the following data from our rendere
 
 <img title="" src="/assets/img/Deferred%20Final%20Image.png" alt="">
 
-#### Putting it together
+### Putting it together
 
 So how do we put the textures together and create the final image? Some sources proposes that a fullscreen shader is to be used to put everything together in the right place, but we also want the scene to be lit and that data hasn’t been accounted for when writing to the albedo (colour) texture. In our previous renderer we ran all of the lighting code in each models pixel shader, but as previously mentioned this lead to some objects being shaded that would later be overwritten. Since the Directional Light is omnipresent in the scene we might as well use a fullscreen shader to apply it. “Aha!”, you say, then maybe we can also try to create an image from the GBuffer-textures at the same time, and that’s exactly what we did! We are left with an image that has all the texture information given from the model as well as lighting information from the directional light.
 
