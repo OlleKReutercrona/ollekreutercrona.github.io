@@ -1517,7 +1517,7 @@
               <p id="text04" class="style2">A visualization of how 3D textures works</p>
               <div>
                   <div>
-                      <pre><code class="language=c++">shadowFactor = CalculateShadowNoBlurring(dLData.shadowMapInfo, dLData.transform, worldPosition, bias);
+                      <pre><code class="language=hlsl">shadowFactor = CalculateShadowNoBlurring(dLData.shadowMapInfo, dLData.transform, worldPosition, bias);
 float3 colour = dLData.directionalLightColour * shadowFactor * dLData.directionalLightIntensity;
 for (int i = 0; i &lt; numberOfSL; i++)
 {
