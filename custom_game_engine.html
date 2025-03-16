@@ -10,13 +10,16 @@
     <meta property="og:title" content="Custom Game Engine" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content="Custom Game Engine" />
-    <meta property="og:image" content="https://ollekrcustomgameengine.carrd.co/assets/images/card.jpg?v=bb5000f8" />
+    <meta property="og:image" content="https://ollekreutercrona.github.io/assets/img/KittyEngineLogo.png" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1280" />
     <meta property="og:image:height" content="800" />
-    <meta property="og:url" content="https://ollekrcustomgameengine.carrd.co" />
+    <meta property="og:url" content="https://ollekreutercrona.github.io/" />
     <meta property="twitter:card" content="summary_large_image" />
-    <link rel="canonical" href="https://ollekrcustomgameengine.carrd.co" />
+    <link rel="canonical" href="https://ollekreutercrona.github.io/" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
     <style>
       /* cyrillic-ext */
       @font-face {
@@ -342,7 +345,7 @@
           <header id="header">
             <ul id="buttons04" class="style2 buttons">
               <li>
-                <a href="#" class="button n01" role="button"
+                <a href="https://ollekreutercrona.github.io/" class="button n01" role="button"
                   ><svg aria-labelledby="buttons04-icon-1-title">
                     <title id="buttons04-icon-1-title">Home</title>
                     <use xlink:href="#icon-2a747dd19e728944f8c54ef1b55a59c6"></use></svg
@@ -350,7 +353,7 @@
                 >
               </li>
               <li>
-                <a href="#projects" class="button n02" role="button"
+                <a href="https://ollekreutercrona.github.io/#projects" class="button n02" role="button"
                   ><svg aria-labelledby="buttons04-icon-2-title">
                     <title id="buttons04-icon-2-title">Folder (Alt)</title>
                     <use xlink:href="#icon-c6f1ad9e8afe210cf10e8df8e4c537f6"></use></svg
@@ -358,7 +361,7 @@
                 >
               </li>
               <li>
-                <a href="#about" class="button n03" role="button"
+                <a href="https://ollekreutercrona.github.io/#about" class="button n03" role="button"
                   ><svg aria-labelledby="buttons04-icon-3-title">
                     <title id="buttons04-icon-3-title">Information</title>
                     <use xlink:href="#icon-5df67a211ae41c4e5f96b6e0ea004ca3"></use></svg
@@ -383,7 +386,7 @@
             </p>
             <div id="image01" class="image">
               <a href="https://ollekreutercrona.github.io/assets/img/KittyEngineLogo.png" class="frame"
-                ><img src="https://ollekrcustomgameengine.carrd.co/assets/images/image01.jpg?v=bb5000f8" alt=""
+                ><img src="https://ollekreutercrona.github.io/assets/img/KittyEngineLogo.png" alt=""
               /></a>
             </div>
             <ul id="buttons01" class="style2 buttons">
@@ -446,66 +449,66 @@
                 define itself and its behaviours.</span
               >
             </p>
-            <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Component
-              {
-                  public:    
-                      virtual ~Component() {};
-              
-                      virtual void SetData(void* aDataObject = nullptr) { aDataObject; };
-                      virtual void DefaultData() { __noop; }
-              
-                      inline virtual void SetActive(const bool aValue)
-                      {
-                          isActive = aValue;
-              
-                          isActive ? OnEnable() : OnDisable();
-                      };
-              
-                      inline bool IsActive() const { return isActive; };
-              
-                      inline GameObject&amp; GetGameObject() { return myGameObject; };
-                      inline const GameObject&amp; GetGameObject() const { return myGameObject; };
-                  protected:
-                      friend class GameObject;
-              
-                      ///// Update Loop Handling /////
-                      virtual void Awake() { __noop; };
-                      virtual void LateUpdate() { __noop; };
-                      virtual void EarlyUpdate() { __noop; };
-                      virtual void Update() { __noop; };
-              
-                      ///// Activity Handling /////
-                      virtual void OnEnable() { __noop; };
-                      virtual void OnDisable() { __noop; };
-                      virtual void OnDestroy() { __noop; };
-              
-              
-                      ///// Collision Handling /////
-                      virtual void OnTriggerEnter(const CollisionData&amp; aCollisionData) { __noop; aCollisionData; };
-                      virtual void OnTriggerStay(const CollisionData&amp; aCollisionData) { __noop; aCollisionData; };
-                      virtual void OnTriggerExit(const CollisionData&amp; aCollisionData) { __noop; aCollisionData; };
-              
-                      virtual void OnCollisionEnter(const CollisionData&amp; aCollisionData) { __noop; aCollisionData; };
-                      virtual void OnCollisionStay(const CollisionData&amp; aCollisionData) { __noop; aCollisionData; };
-                      virtual void OnCollisionExit(const CollisionData&amp; aCollisionData) { __noop; aCollisionData; };
-              
-                      virtual void OnPhysXCollision(const PhysXCollisionData&amp; aPhysXCollisionData) { __noop; aPhysXCollisionData; };
-              
-              
-                      /* Is called right when GameObjectManager destroys all other gameobjects. */
-                      virtual void OnSceneChange() { __noop; };
-              
-                      ///// Debug /////
-              
-                      virtual void DrawDebug(KE::DebugRenderer&amp; aDbg) { __noop; };
-                      virtual void Inspect(KE_EDITOR::ComponentInspector&amp; aInspector) { __noop; };
-              
-                      Component(GameObject&amp; aParentGameObject) : myGameObject(aParentGameObject) {};
-              
-                      GameObject&amp; myGameObject;
-              
-                      bool isActive = true;
-              };
+            <div><div><pre><code class="language=c++">class Component
+{
+public:    
+  virtual ~Component() {};
+
+  virtual void SetData(void* aDataObject = nullptr) { aDataObject; };
+  virtual void DefaultData() { __noop; }
+
+  inline virtual void SetActive(const bool aValue)
+  {
+      isActive = aValue;
+
+      isActive ? OnEnable() : OnDisable();
+  };
+
+  inline bool IsActive() const { return isActive; };
+
+  inline GameObject&amp; GetGameObject() { return myGameObject; };
+  inline const GameObject&amp; GetGameObject() const { return myGameObject; };
+protected:
+  friend class GameObject;
+
+  ///// Update Loop Handling /////
+  virtual void Awake() { __noop; };
+  virtual void LateUpdate() { __noop; };
+  virtual void EarlyUpdate() { __noop; };
+  virtual void Update() { __noop; };
+
+  ///// Activity Handling /////
+  virtual void OnEnable() { __noop; };
+  virtual void OnDisable() { __noop; };
+  virtual void OnDestroy() { __noop; };
+
+
+  ///// Collision Handling /////
+  virtual void OnTriggerEnter(const CollisionData&amp; aCollisionData) { __noop; aCollisionData; };
+  virtual void OnTriggerStay(const CollisionData&amp; aCollisionData) { __noop; aCollisionData; };
+  virtual void OnTriggerExit(const CollisionData&amp; aCollisionData) { __noop; aCollisionData; };
+
+  virtual void OnCollisionEnter(const CollisionData&amp; aCollisionData) { __noop; aCollisionData; };
+  virtual void OnCollisionStay(const CollisionData&amp; aCollisionData) { __noop; aCollisionData; };
+  virtual void OnCollisionExit(const CollisionData&amp; aCollisionData) { __noop; aCollisionData; };
+
+  virtual void OnPhysXCollision(const PhysXCollisionData&amp; aPhysXCollisionData) { __noop; aPhysXCollisionData; };
+
+
+  /* Is called right when GameObjectManager destroys all other gameobjects. */
+  virtual void OnSceneChange() { __noop; };
+
+  ///// Debug /////
+
+  virtual void DrawDebug(KE::DebugRenderer&amp; aDbg) { __noop; };
+  virtual void Inspect(KE_EDITOR::ComponentInspector&amp; aInspector) { __noop; };
+
+  Component(GameObject&amp; aParentGameObject) : myGameObject(aParentGameObject) {};
+
+  GameObject&amp; myGameObject;
+
+  bool isActive = true;
+};
               </code></pre></div></div>
             <p id="text09" class="style2">
               The first iteration of this system saw a pure virtual component class, but this had a major drawback. Pure
@@ -577,7 +580,7 @@
             </p>
             <div id="image02" class="image">
               <a href="https://ollekreutercrona.github.io/assets/img/Deferred%20Final%20Image.png" class="frame"
-                ><img src="https://ollekrcustomgameengine.carrd.co/assets/images/image02.jpg?v=bb5000f8" alt=""
+                ><img src="https://ollekreutercrona.github.io/assets/img/Deferred%20Final%20Image.png" alt=""
               /></a>
             </div>
             <h3 id="text15" class="style4">Putting it together</h3>
@@ -604,7 +607,7 @@
             </p>
             <div id="image03" class="image">
               <a href="https://ollekreutercrona.github.io/assets/img/Pointlight%20Sphere.png" class="frame"
-                ><img src="https://ollekrcustomgameengine.carrd.co/assets/images/image03.jpg?v=bb5000f8" alt=""
+                ><img src="https://ollekreutercrona.github.io/assets/img/Pointlight%20Sphere.png" alt=""
               /></a>
             </div>
             <p id="text17" class="style2">
@@ -668,9 +671,6 @@
                 >
               </li>
             </ul>
-            <div id="credits" class="icc-credits">
-              <span><a href="https://carrd.co/build?ref=auto">Made with Carrd</a></span>
-            </div>
           </footer>
         </div>
       </div>
