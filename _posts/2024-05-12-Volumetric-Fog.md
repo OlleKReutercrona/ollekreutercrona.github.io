@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Volumetric Fog"
-permalink: /Volumetric_Fog
+permalink: /Volumetric_Fog_OLD
 
 ---
 # **Volumetric Fog**
